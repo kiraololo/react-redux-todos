@@ -1,10 +1,13 @@
 import { IAction, IState } from "../infrastructure/interfaces";
-import { TASK_CREATE, TASK_DELETE, TASK_UPDATE, TASK_GET_ALL, TASK_CAT_CHANGE, TASK_DESCR_CHANGE, TASK_NAME_CHANGE, TASK_ID_CHANGE, CAT_NAME_CHANGE, CAT_DESCR_CHANGE, CAT_ID_CHANGE, CAT_GET_ALL, CAT_CREATE, CAT_UPDATE, CAT_DELETE } from "./actions";
+import { TASK_CREATE, TASK_DELETE, TASK_UPDATE, TASK_GET_ALL, 
+    TASK_CAT_CHANGE, TASK_DESCR_CHANGE, TASK_NAME_CHANGE, TASK_ID_CHANGE, 
+    CAT_NAME_CHANGE, CAT_DESCR_CHANGE, CAT_ID_CHANGE, CAT_GET_ALL, 
+    CAT_CREATE, CAT_UPDATE, CAT_DELETE } from "./actions";
 import { initialState } from "./state";
 import * as api from '../Api';
 
 export const rootReducer = (state:IState= initialState, action: IAction) => {
-    let res: any;
+    let res: IState;
     switch(action.type){
         case TASK_CREATE:
             res = {

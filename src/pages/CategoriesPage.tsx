@@ -56,6 +56,8 @@ export const CategoriesPage: React.FC = () => {
                 headerText = "Удаление категории"
                 isShown={useConfirmModal.isShown} 
                 toggle={useConfirmModal.toggle} 
-                confirmationProps={{message: delCatMessage, onCancel: onCancelDeleting, onConfirm: onConfirmDeleting}}/>
+                message={delCatMessage}
+                onCancel={onCancelDeleting}
+                onConfirm = {onConfirmDeleting}/>
     </>;
 };

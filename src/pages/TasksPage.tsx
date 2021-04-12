@@ -57,6 +57,8 @@ export const TasksPage: React.FC = () => {
                 headerText = "Удаление задачи"
                 isShown={useConfirmModal.isShown} 
                 toggle={useConfirmModal.toggle} 
-                confirmationProps={{message: delTaskMessage, onCancel: onCancelDeleting, onConfirm: onConfirmDeleting}}/>
+                message={delTaskMessage}
+                onCancel={onCancelDeleting}
+                onConfirm={onConfirmDeleting}/>
         </>;
 };

@@ -10,6 +10,14 @@ type CategoryProps = {
 };
 
 export const Category: React.FC<CategoryProps> = ({category, onShowEditWindow, onDelete}) => {
+    const handleOnDelete=():void=>{
+        onDelete(category.id, category.name);
+    };
+
+    const handleOnShowEdit=():void=>{
+        onShowEditWindow(category);
+    };
+
     return <div className="item-ctr">
         <div className="item-cont px1 py1">
             <div>
@@ -20,8 +28,8 @@ export const Category: React.FC<CategoryProps> = ({category, onShowEditWindow, o
             </div>
         </div>
         <div className="item-ctrl">                        
-            <FontAwesomeIcon icon={faPen} onClick={()=>onShowEditWindow(category)}/>
-            <FontAwesomeIcon icon={faTrash} onClick={()=>onDelete(category.id, category.name)}/>
+            <FontAwesomeIcon icon={faPen} onClick={handleOnShowEdit}/>
+            <FontAwesomeIcon icon={faTrash} onClick={handleOnDelete}/>
         </div>
     </div>;
 };
